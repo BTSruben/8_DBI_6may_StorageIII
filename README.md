@@ -5,19 +5,19 @@ MongoDB in AWS Setup
 
 1. Create an instance EC2 in AWS with Amazon Linux Image
 
-2. Connect to public EC2 instance using the command: ssh -i <keypair> <hostname>
+2. Connect to public EC2 instance using the command: ssh -i \<keypair> \<hostname>
 
 3. Add MongoDB repo inside the instance:
 
     sudo vim /etc/yum.repos.d/mongodb-org-4.0.repo
 
 
-    [mongodb-org-4.0]
-    name=MongoDB Repository
-    baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/4.0/x86_64/
-    gpgcheck=1
-    enabled=1
-    gpgkey=https://www.mongodb.org/static/pgp/server-4.0.asc
+    [mongodb-org-4.0] /
+    name=MongoDB Repository /
+    baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/4.0/x86_64/ /
+    gpgcheck=1 /
+    enabled=1 /
+    gpgkey=https://www.mongodb.org/static/pgp/server-4.0.asc /
 
 4. Install MongoDB ( EC2 Instance )
 
@@ -29,14 +29,14 @@ MongoDB in AWS Setup
 
 6. You can verify that the mongod process has started successfully by checking the contents of the log file at /var/log/mongodb/mongod.log for a line reading ( EC2 Instance )
 
-    [initandlisten] waiting for connections on port <port>
+    [initandlisten] waiting for connections on port \<port>
 
 
     grep "waiting for connection" /var/log/mongodb/mongod.log
 
 7. From our local machine send the file restaurants.json to EC2 instance ( Local machine )
 
-    scp -i <keypair> <file> <hostname>:<path>
+    scp -i \<keypair> \<file> \<hostname>:\<path>
 
 8. Import our documents to MongoDB ( EC2 Instance )
 
@@ -63,7 +63,7 @@ MongoDB in AWS Setup
 
 4. Connect from local machine to remote MongoDB:
 
-    mongo <public-url>:<port>/<database>
+    mongo \<public-url>:\<port>/\<database>
 
 
 **Exercices**
